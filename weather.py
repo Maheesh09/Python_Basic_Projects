@@ -4,7 +4,7 @@ import requests
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
-BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
+BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 def get_weather_data(city):
 
@@ -37,7 +37,7 @@ def main():
 
     city = input("Enter city Name: ")
 
-    if city is None or city.strip() == "":
+    if city.strip() == "":
         print("City name cannot be empty.")
         return
     
