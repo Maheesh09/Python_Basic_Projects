@@ -18,7 +18,7 @@ def get_weather_data(city):
         return None, None, None    
 
     if response.status_code != 200:
-        print("Wrong city name or API error.")
+        print("Wrong city name or API error")
         return None, None, None
     
     data = response.json()
@@ -38,6 +38,11 @@ def main():
         return
     
     temp, humidity,description = get_weather_data(city)
+
+    if temp is None:
+        print("Could not retrieve weather data.")
+        return
+    
     print(f"Temperature: {temp}°C")
     print(f"Humidity: {humidity}%")
     print(f"Description: {description}")
